@@ -100,6 +100,5 @@ module.exports = {
         }),
       ],
     }),
-    new BundleAnalyzerPlugin(),
   ],
 };
