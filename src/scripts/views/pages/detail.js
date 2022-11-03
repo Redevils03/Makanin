@@ -37,6 +37,8 @@ const Detail = {
         const reviewsContainer = document.getElementById('reviews');
         reviewsContainer.innerHTML = reviewTemplate(restaurant.restaurant.customerReviews);
 
+        document.querySelector('footer').style.display = 'block';
+
         FavBtnInit.init({
           favoriteContainer: document.querySelector('.favoriteButton'),
           favoriteRestaurants: FavRestIdb,
