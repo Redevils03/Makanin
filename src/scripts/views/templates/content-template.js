@@ -105,7 +105,7 @@ const skeletonRestaurantTemplate = (view, restaurants) => {
 
   setTimeout(() => {
     view.showFavoriteRestaurants(restaurants);
-  }, 1000);
+  }, 2000);
 };
 
 const menuTemplate = (menus) => {
