@@ -82,11 +82,13 @@ const skeletonRestaurantTemplate = (view, restaurants) => {
   // eslint-disable-next-line quotes
   let skeleton = ``;
   // eslint-disable-next-line no-plusplus
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 3; i++) {
     skeleton += `
     <article>
       <div class='skeleton' id='skeleton-box'>
-        <div class='skeleton-img'></div>
+        <div class='skeleton-img-container'>
+          <div class='skeleton-img restaurantImg'></div>
+        </div>
         <div class='detail'>
             <div class='ratingCity'>
                 <p class='skeleton-text-rating rating'></p>
@@ -105,7 +107,7 @@ const skeletonRestaurantTemplate = (view, restaurants) => {
 
   setTimeout(() => {
     view.showFavoriteRestaurants(restaurants);
-  }, 1000);
+  }, 3000);
 };
 
 const menuTemplate = (menus) => {
