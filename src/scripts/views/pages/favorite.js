@@ -15,23 +15,24 @@ const Favorite = {
     try {
       const restaurants = await FavRestIdb.getAllRestaurants();
       const searchContainer = document.getElementById('query');
-
-      if (restaurants < 1) {
+      console.log(restaurants.length < 1);
+      if (restaurants.length < 1) {
         document.getElementById('content').style.display = 'block';
         document.getElementById('query').style.marginLeft = '0';
         view.showFavoriteRestaurants(restaurants);
       } else {
+        document.getElementById('restaurant-search-container').style.padding = '0';
         document.getElementById('content').style.display = 'grid';
         document.getElementById('query').style.marginLeft = '15px';
         skeletonRestaurantTemplate(view, restaurants);
       }
 
       searchContainer.addEventListener('keyup', () => {
-        console.log(searchContainer);
         // eslint-disable-next-line max-len
         const searchResult = restaurants.filter((restaurant) => (restaurant.name).includes(searchContainer.value));
 
-        if (searchResult < 1) {
+        if (searchResult.length < 1) {
+          document.getElementById('restaurant-search-container').style.padding = '0 1000px';
           document.getElementById('content').style.display = 'block';
           document.getElementById('query').style.marginLeft = '0';
           view.showFavoriteRestaurants(searchResult);
@@ -41,6 +42,8 @@ const Favorite = {
           skeletonRestaurantTemplate(view, searchResult);
         }
       });
+
+      document.querySelector('footer').style.display = 'block';
     } catch (error) {
       document.getElementById('favoriteHeader').innerHTML = `
       <h2 tabindex='0' style='padding: 100px 0 270px 0;'>Restaurant Data Cannot be Displayed, Check Your Connection or Reload The Page</h2>`;

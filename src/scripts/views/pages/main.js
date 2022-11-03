@@ -21,6 +21,8 @@ const Main = {
       const view = new FavoriteRestaurantSearchView();
 
       skeletonRestaurantTemplate(view, restaurants);
+
+      document.querySelector('footer').style.display = 'block';
     } catch (error) {
       document.getElementById('content').innerText = 'Restaurant Data Cannot be Displayed, Check Your Connection or Reload The Page';
     }

@@ -35,23 +35,27 @@ class App {
   }
 }
 
-const app = new App({
-  button: document.getElementById('sidebar'),
-  drawer: document.getElementById('menu-sidebar'),
-  content: document.querySelector('main'),
-});
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('body').style.display = 'block';
 
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
+  const app = new App({
+    button: document.getElementById('sidebar'),
+    drawer: document.getElementById('menu-sidebar'),
+    content: document.querySelector('main'),
+  });
 
-window.addEventListener('load', () => {
-  app.renderPage();
-  swRegister();
-});
+  window.addEventListener('hashchange', () => {
+    app.renderPage();
+  });
 
-const skipLink = document.getElementById('skipLink');
-skipLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  document.getElementById('mainContent').focus();
+  window.addEventListener('load', () => {
+    app.renderPage();
+    swRegister();
+  });
+
+  const skipLink = document.getElementById('skipLink');
+  skipLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById('mainContent').focus();
+  });
 });
