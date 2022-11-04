@@ -7,8 +7,8 @@ const detailTemplate = (restaurant) => `
   <h2 tabindex='0' class='restaurant__title' id='detailHeader'>${restaurant.name}</h2>
   <div class='restImage'>
     <picture>
-      <source media='(max-width: 600px)' srcset='${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}'>
-      <img class='detailImg' src='${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}' alt='Restaurant Interior Preview'>
+      <source media='(max-width: 600px)' data-srcset='${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}'>
+      <img class='detailImg lazyload' data-src='${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}' alt='Restaurant Interior Preview'>
     </picture>
     <div class='favoriteButton'></div>
   </div>
@@ -36,7 +36,7 @@ const detailTemplate = (restaurant) => `
 const restaurantTemplate = (restaurant) => `
   <article>
     <picture>
-      <source media='(max-width: 600px)' srcset='${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}'>
+      <source media='(max-width: 600px)' data-srcset='${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}'>
       <img class='restaurantImg lazyload' data-src='${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}' alt='Restaurant Interior Preview'>
     </picture>
     <div class='detail'>

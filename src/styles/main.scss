@@ -451,7 +451,7 @@ picture {
 
 .skeleton-img-container {
   background-color: hsl(200, 20%, 80%);
-  width: 95vw;
+  width: 90vw;
 }
 
 @media screen and (min-width: 1200px) {
@@ -503,10 +503,16 @@ picture {
     padding: 0 0 0 18px;
     width: 90%;
   }
-  .heroImg { width: 600px; }
   .detailImg {
     width: 440px;
     height: 290px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px){
+  .restaurantImg {
+    width: 407px;
+    height: 305px;
   }
 }
 
@@ -514,4 +520,5 @@ picture {
   article > img { height: 150px; }
   #foods, #drinks { width: auto; }
   .menus div { padding-right: 50px; }
+  .heroImg { width: 600px; }
 }
