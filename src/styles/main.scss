@@ -474,6 +474,13 @@ picture {
   .heroImg { width: 900px; }
 }
 
+@media (min-width: 800px) and (max-width: 1500px) { 
+  .restaurantImg {
+    width: 370px;
+    height: 208px;
+  }
+}
+
 @media (min-width: 800px) and (max-width: 1200px) { 
   .skeleton-img-container { width: 46.2vw; }
 }
@@ -481,10 +488,6 @@ picture {
 @media screen and (min-width: 800px) {
   .dropdown-side { display: none; }
   #contentDetail { width: 750px; }
-  .restaurantImg {
-    width: 370px;
-    height: 208px;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -509,10 +512,10 @@ picture {
   }
 }
 
-@media (min-width: 400px) and (max-width: 800px){
+@media (min-width: 300px) and (max-width: 800px){
   .restaurantImg {
-    width: 407px;
-    height: 305px;
+    width: 290px;
+    height: 218px;
   }
 }
 
@@ -520,5 +523,9 @@ picture {
   article > img { height: 150px; }
   #foods, #drinks { width: auto; }
   .menus div { padding-right: 50px; }
-  .heroImg { width: 500px; }
+  .heroImg { width: 400px; }
+}
+
+@media screen and (max-width: 320px) {
+  .heroImg { width: 320px; }
 }
