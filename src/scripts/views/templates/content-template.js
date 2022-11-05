@@ -13,7 +13,7 @@ const detailTemplate = (restaurant) => `
     <div class='favoriteButton'></div>
   </div>
   <div class='ratingCity'>
-      <p class='rating' tabindex='0'>Rating&nbsp: &nbsp${restaurant.rating}&nbsp<i class='fa fa-star'></i></p>
+      <p class='ratingDetail' tabindex='0'>Rating&nbsp: &nbsp${restaurant.rating}&nbsp<i class='fa fa-star'></i></p>
       <p class='city' tabindex='0'>${restaurant.address},&nbsp${restaurant.city}</p>
   </div>
   <p tabindex='0'>${restaurant.description}</p>
@@ -54,7 +54,7 @@ const skeletonDetailTemplate = () => `
   <div class='skeleton' id='skeleton-box-detail'>
     <div class='skeleton-text-title-detail' id='detailHeader'></div>
     <div class='restImage'>
-      <div class='skeleton-img-detail'></div>
+      <div class='skeleton-img-detail detailImg'></div>
     </div>
     <div class='ratingCity'>
         <p class='skeleton-text-rating rating'></p>
