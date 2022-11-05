@@ -74,6 +74,7 @@ header {
   text-align: right;
   animation: moveDown 300ms ease-in-out forwards;
   transform-origin: top center;
+  z-index: 1;
 }
 
 .dropdown-side > button {
@@ -185,7 +186,7 @@ article:hover {
   width: 100%;
 }
 
-.detail p:not(.rating, .city, .skeleton-text-desc, #desc), .detail h3 {
+.detail p:not(.rating, .ratingDetail, .city, .skeleton-text-desc, #desc), .detail h3 {
   margin: 0;
   padding: 12px 30px;
   text-align: justify;
@@ -286,11 +287,19 @@ footer {
   text-align: center;
 }
 
+.rating, .ratingDetail {
+  flex-basis: 50%;
+  text-align: left;
+}
+
 .rating {
   margin: 0;
   padding: 12px 0 12px 30px;
-  flex-basis: 50%;
-  text-align: left;
+}
+
+.ratingDetail {
+  margin: 0 21px 0 0;
+  padding: 12px 0;
 }
 
 .city {
@@ -396,13 +405,8 @@ footer {
   width: 40%;
 }
 
-.skeleton-img {
+.skeleton-img, .skeleton-img-detail {
   background-color: hsl(200, 20%, 80%);
-}
-
-.skeleton-img-detail {
-  width: 750px;
-  height: 500px;
 }
 
 .skeleton-review {
@@ -428,7 +432,7 @@ footer {
 
 .detailImg {
   width: 750px;
-  height: 500px;
+  height: 422px;
 }
 
 picture {
@@ -451,17 +455,13 @@ picture {
 
 .skeleton-img-container {
   background-color: hsl(200, 20%, 80%);
-  width: 90vw;
+  width: 91.67vw;
 }
 
 @media screen and (min-width: 1200px) {
   #content { grid-template-columns: repeat(3, 1fr) }
   .darkImg, .heroImg { height: 480px; }
   .skeleton-img-container { width: 30.9vw; }
-}
-
-@media screen and (max-width: 1200px) {
-  .heroImg { width: 1300px; }
 }
 
 @media screen and (max-width: 800px) {
@@ -471,7 +471,6 @@ picture {
   }
   nav > .navMenu { display: none; }
   .dropdown-side > button { display: block; }
-  .heroImg { width: 900px; }
 }
 
 @media (min-width: 800px) and (max-width: 1500px) { 
@@ -493,11 +492,22 @@ picture {
 @media screen and (max-width: 800px) {
   article > img { height: 250px; }
   #content { grid-template-columns: repeat(1, 1fr) }
+  .detailImg {
+    width: 670px;
+    height: 377px;
+  }
 }
 
 @media screen and (max-width: 700px) {
   #reviews { grid-template-columns: repeat(1, 1fr); }
-  .darkImg, .heroImg { height: 350px; }
+  .darkImg, .heroImg { height: 190px; }
+  .detailImg {
+    width: 470px;
+    height: 264px;
+  }
+  .skeleton-text-title-detail {
+    margin: 0 0 10px 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -507,8 +517,11 @@ picture {
     width: 90%;
   }
   .detailImg {
-    width: 440px;
-    height: 290px;
+    width: 358px;
+    height: 208px;
+  }
+  .skeleton-review {
+    margin: 0 50px 15px 50px;
   }
 }
 
@@ -523,9 +536,11 @@ picture {
   article > img { height: 150px; }
   #foods, #drinks { width: auto; }
   .menus div { padding-right: 50px; }
-  .heroImg { width: 400px; }
-}
-
-@media screen and (max-width: 320px) {
-  .heroImg { width: 320px; }
+  .detailImg {
+    width: 285px;
+    height: 163px;
+  }
+  .skeleton-review {
+    margin: 0 10px 15px 10px;
+  }
 }
