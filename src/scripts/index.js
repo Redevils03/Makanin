@@ -41,10 +41,6 @@ const app = new App({
   content: document.querySelector('main'),
 });
 
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
-
 function generateFingerprint() {
     // Use a Promise to handle the asynchronous loading of the library
     return new Promise((resolve, reject) => {
@@ -68,9 +64,19 @@ function generateFingerprint() {
       // Append the script to the document body
       document.body.appendChild(script);
     });
-  }
+}
+window.addEventListener('hashchange', () => {
+  generateFingerprint()
+    .then(fp => fp.get())
+    .then(result => alert(result.visitorId))
+    .catch(error => alert(error))
+  // app.renderPage();
+});
+
+
 
 window.addEventListener('load', () => {
+  console.log('in');
   generateFingerprint()
     .then(fp => fp.get())
     .then(result => alert(result.visitorId))
