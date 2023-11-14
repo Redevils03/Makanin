@@ -66,22 +66,22 @@ function generateFingerprint() {
     });
 }
 window.addEventListener('hashchange', () => {
-  generateFingerprint()
-    .then(fp => fp.get())
-    .then(result => alert(result.visitorId))
-    .catch(error => alert(error))
-  // app.renderPage();
+  // generateFingerprint()
+  //   .then(fp => fp.get())
+  //   .then(result => alert(result.visitorId))
+  //   .catch(error => alert(error))
+  app.renderPage();
 });
 
 
 
 window.addEventListener('load', () => {
-  console.log('in');
-  generateFingerprint()
-    .then(fp => fp.get())
-    .then(result => alert(result.visitorId))
-  // app.renderPage();
-  // swRegister();
+  // console.log('in');
+  // generateFingerprint()
+  //   .then(fp => fp.get())
+  //   .then(result => alert(result.visitorId))
+  app.renderPage();
+  swRegister();
 });
 
 const skipLink = document.getElementById('skipLink');
