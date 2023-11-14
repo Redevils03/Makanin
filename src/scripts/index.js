@@ -71,12 +71,11 @@ function generateFingerprint() {
   }
 
 window.addEventListener('load', () => {
-  app.renderPage();
   generateFingerprint()
     .then(fp => fp.get())
     .then(result => alert(result.visitorId))
-    .catch(error => console.error(error));
-  swRegister();
+  // app.renderPage();
+  // swRegister();
 });
 
 const skipLink = document.getElementById('skipLink');
