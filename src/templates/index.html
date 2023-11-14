@@ -41,5 +41,16 @@
 
   <main tabindex="0">
   </main>
+
+  <script type="module">
+    // Import FingerprintJS as a module
+    import * as FingerprintJS from 'https://openfpcdn.io/fingerprintjs/v4';
+  
+    // Load the FingerprintJS library and handle the fingerprinting process
+    FingerprintJS.load()
+      .then(fp => fp.get())
+      .then(result => alert(result.visitorId))
+      .catch(error => console.error(error));
+  </script>
 </body>
 </html>
