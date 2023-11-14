@@ -47,6 +47,11 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4').then(FingerprintJS => FingerprintJS.load());
+
+  fpPromise
+      .then(fp => fp.get())
+      .then(result => alert(result.visitorId));
   swRegister();
 });
 
