@@ -41,30 +41,6 @@ const app = new App({
   content: document.querySelector('main'),
 });
 
-function generateFingerprint() {
-    // Use a Promise to handle the asynchronous loading of the library
-    return new Promise((resolve, reject) => {
-      // Create a script element
-      const script = document.createElement('script');
-
-      // Set the source to the FingerprintJS library
-      script.src = 'https://openfpcdn.io/fingerprintjs/v4';
-
-      // Set the onload event to resolve the Promise
-      script.onload = () => {
-        // Load the library and resolve the Promise with the FingerprintJS object
-        resolve(window.FingerprintJS.load());
-      };
-
-      // Set the onerror event to reject the Promise if the script fails to load
-      script.onerror = () => {
-        reject(new Error('Failed to load FingerprintJS'));
-      };
-
-      // Append the script to the document body
-      document.body.appendChild(script);
-    });
-}
 window.addEventListener('hashchange', () => {
   // generateFingerprint()
   //   .then(fp => fp.get())
